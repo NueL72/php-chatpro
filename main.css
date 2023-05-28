@@ -1,0 +1,35 @@
+.save-data{
+    background: green;
+    font-size: larger;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    transition: 2s;
+    width: 250px;
+    height: 60px;
+    display: grid;
+    place-content: center;
+    transition: 0.2s;
+   
+}
+
+
+.loader{
+    pointer-events: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: white;
+    animation: an1 5s ease infinite;
+}
+
+@keyframes an1 {
+    0% {
+        transform: rotate(3turn);
+    }
+    100% {
+        transform: rotate(5turn);
+    }
+}
