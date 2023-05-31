@@ -36,7 +36,7 @@ if (isset($_POST['register'])) {
     <link rel="stylesheet" href="dist/css/adminlte.css">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-footer-fixed" style="overflow-x: hidden;">
     <div class="wrapper">
 
         <!-- Navbar -->
@@ -53,21 +53,34 @@ if (isset($_POST['register'])) {
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="new.php" class="nav-link">AddQuery</a>
                 </li>
+
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="users.php" class="nav-link">Clients</a>
                 </li>
+
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="admin.php" class="nav-link">Admins</a>
+                </li>
+                <li style="padding-left: 800px;">
+                    <div class="dropdown">
+                        <button id="my-dropdown" class="btn btn-primary dropdown-toggle bg-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?></button>
+                        <div class="dropdown-menu" aria-labelledby="my-dropdown">
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                        </div>
+                    </div>
+                </li>
+
             </ul>
 
-            <div class="user-panel d-flex" style="padding-left: 500px;">
+            <div class="user-panel d-flex">
                 <div class="image">
                     <img src="dist/img/emma.jpg" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
                 </div>
             </div>
             <!-- Right navbar links -->
         </nav>
+
+        
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -78,8 +91,9 @@ if (isset($_POST['register'])) {
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="dist/img/emma.jpg" class="img-circle elevation-2" alt="User Image">
+
                     </div>
-                    <div class="info">
+                    <div class="info" style="padding-left:30px">
                         <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
                     </div>
                 </div>
@@ -145,10 +159,10 @@ if (isset($_POST['register'])) {
 
         <section class="cont" style="padding-top: 100px;">
             <div class="content align-self-md-center">
-                <div class="row p-xl-5" style="margin-left: 420px;">
+                <div class="row p-xl-5" style="margin-left: 330px;">
                     <div style="padding-left: 150px;">
 
-                        <div class="card card-danger">
+                        <div class="card card-danger" style="width:800px;">
                             <div class="card-header" style="background:white; color:black;">
                                 <h3 class="card-title">Add New Users</h3>
                             </div>

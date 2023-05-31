@@ -24,61 +24,72 @@ if (!empty($_GET['id'])) {
 
 
 ?>
-    <!DOCTYPE html>
-    <html lang="en">
+ <!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Hospital Chatbot</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hospital Chatbot</title>
 
-        <!-- Google Font: Source Sans Pro -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <!-- Font Awesome Icons -->
-        <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-        <!-- overlayScrollbars -->
-        <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="dist/css/adminlte.css">
-        <link rel="stylesheet" href="main.css">
-    </head>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.css">
+</head>
 
-    <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-        <div class="wrapper">
-            <!-- Navbar -->
-            <nav class="main-header navbar navbar-expand" style="background:white;">
-                <!-- Left navbar links -->
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                    </li>
-                    <li class="nav-item d-none d-sm-inline-block">
-                        <a href="dash.php" class="nav-link">Home</a>
-                    </li>
+<body class="hold-transition sidebar-mini layout-fixed layout-footer-fixed" style="overflow-x: hidden;">
+    <div class="wrapper">
 
-                    <li class="nav-item d-none d-sm-inline-block">
-                        <a href="new.php" class="nav-link">AddQuery</a>
-                    </li>
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand" style="background:white;">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="dash.php" class="nav-link">Home</a>
+                </li>
 
-                    <li class="nav-item d-none d-sm-inline-block">
-                        <a href="users.php" class="nav-link">Clients</a>
-                    </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="new.php" class="nav-link">AddQuery</a>
+                </li>
 
-                    <li class="nav-item d-none d-sm-inline-block">
-                        <a href="admin.php" class="nav-link">Admins</a>
-                    </li>
-                </ul>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="users.php" class="nav-link">Clients</a>
+                </li>
 
-                <div class="user-panel d-flex" style="padding-left: 500px;">
-                    <div class="image">
-                        <img src="dist/img/emma.jpg" class="img-circle elevation-2" alt="User Image">
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="admin.php" class="nav-link">Admins</a>
+                </li>
+                <li style="padding-left: 800px;">
+                    <div class="dropdown">
+                        <button id="my-dropdown" class="btn btn-primary dropdown-toggle bg-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?></button>
+                        <div class="dropdown-menu" aria-labelledby="my-dropdown">
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                        </div>
                     </div>
-                    <div class="info">
-                        <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
-                    </div>
+                </li>
+
+            </ul>
+
+            <div class="user-panel d-flex">
+                <div class="image">
+                    <img src="dist/img/emma.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
-                <!-- Right navbar links -->
-            </nav>
+            </div>
+            <!-- Right navbar links -->
+        </nav>
+
+        
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
             <!-- /.navbar -->
             <!-- /.navbar -->
 
@@ -91,7 +102,7 @@ if (!empty($_GET['id'])) {
                         <div class="image">
                             <img src="dist/img/emma.jpg" class="img-circle elevation-2" alt="User Image">
                         </div>
-                        <div class="info">
+                        <div class="info" style="padding-left:30px">
                             <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
                         </div>
                     </div>

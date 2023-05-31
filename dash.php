@@ -21,8 +21,7 @@ $results = mysqli_fetch_all($query);
     <title>Hospital Chatbot</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- overlayScrollbars -->
@@ -31,14 +30,8 @@ $results = mysqli_fetch_all($query);
     <link rel="stylesheet" href="dist/css/adminlte.css">
 </head>
 
-
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-
+<body class="hold-transition sidebar-mini layout-fixed layout-footer-fixed" style="overflow-x: hidden;">
     <div class="wrapper">
-
-        <!-- <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="dist/img/Iridicent word.gif" alt="preloader" height="100" width="100">
-        </div> -->
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand" style="background:white;">
@@ -62,20 +55,26 @@ $results = mysqli_fetch_all($query);
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="admin.php" class="nav-link">Admins</a>
                 </li>
-
+                <li style="padding-left: 800px;">
+                    <div class="dropdown">
+                        <button id="my-dropdown" class="btn btn-primary dropdown-toggle bg-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?></button>
+                        <div class="dropdown-menu" aria-labelledby="my-dropdown">
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                        </div>
+                    </div>
+                </li>
 
             </ul>
 
-            <div class="user-panel d-flex" style="padding-left: 500px;">
+            <div class="user-panel d-flex">
                 <div class="image">
                     <img src="dist/img/emma.jpg" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
                 </div>
             </div>
             <!-- Right navbar links -->
         </nav>
+
+        
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -86,8 +85,9 @@ $results = mysqli_fetch_all($query);
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="dist/img/emma.jpg" class="img-circle elevation-2" alt="User Image">
+
                     </div>
-                    <div class="info">
+                    <div class="info" style="padding-left:30px">
                         <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
                     </div>
                 </div>
@@ -153,11 +153,11 @@ $results = mysqli_fetch_all($query);
             </div>
         </aside>
 
-        <section class="cont" style="padding-top: 50px; width:2000px;">
+        <section class="cont" style="width:2000px;">
             <div class="content align-self-md-center">
                 <div class="row p-xl-5" style="margin-left: 420px;">
                     <div class="col-md-6" style="padding-bottom: 30px;">
-                        <div class="card card-danger" style="position: flex;">
+                        <div class="card card-danger" style="position: flex; width:1000px">
                             <div class="card-header" style="background:white; color:black;">
                                 <h3 class="card-title">List of Queries</h3>
                             </div>

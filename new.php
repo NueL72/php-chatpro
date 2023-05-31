@@ -1,19 +1,18 @@
 <?php
 session_start();
-    include_once 'driver.php';
+include_once 'driver.php';
 
-    if(isset($_POST['Add'])){
-        $queries = $_POST['queries'];
-        $replies = $_POST['replies'];
-        $adm_id = $_POST['adm_id'];
-        $sql = "INSERT INTO chatbot VALUES ('', '$queries', '$replies', '$adm_id')";
-        $query = mysqli_query($conn, $sql);
+if (isset($_POST['Add'])) {
+    $queries = $_POST['queries'];
+    $replies = $_POST['replies'];
+    $adm_id = $_POST['adm_id'];
+    $sql = "INSERT INTO chatbot VALUES ('', '$queries', '$replies', '$adm_id')";
+    $query = mysqli_query($conn, $sql);
 
-        if($query == true){
-            header('location:dash.php');
-        }
-
+    if ($query == true) {
+        header('location:dash.php');
     }
+}
 
 ?>
 <!DOCTYPE html>
@@ -25,8 +24,7 @@ session_start();
     <title>Hospital Chatbot</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- overlayScrollbars -->
@@ -35,7 +33,7 @@ session_start();
     <link rel="stylesheet" href="dist/css/adminlte.css">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-footer-fixed" style="overflow-x: hidden;">
     <div class="wrapper">
 
         <!-- Navbar -->
@@ -52,6 +50,7 @@ session_start();
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="new.php" class="nav-link">AddQuery</a>
                 </li>
+
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="users.php" class="nav-link">Clients</a>
                 </li>
@@ -59,19 +58,26 @@ session_start();
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="admin.php" class="nav-link">Admins</a>
                 </li>
+                <li style="padding-left: 800px;">
+                    <div class="dropdown">
+                        <button id="my-dropdown" class="btn btn-primary dropdown-toggle bg-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?></button>
+                        <div class="dropdown-menu" aria-labelledby="my-dropdown">
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                        </div>
+                    </div>
+                </li>
 
             </ul>
 
-            <div class="user-panel d-flex" style="padding-left: 500px;">
+            <div class="user-panel d-flex">
                 <div class="image">
                     <img src="dist/img/emma.jpg" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
                 </div>
             </div>
             <!-- Right navbar links -->
         </nav>
+
+        
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -82,8 +88,9 @@ session_start();
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="dist/img/emma.jpg" class="img-circle elevation-2" alt="User Image">
+
                     </div>
-                    <div class="info">
+                    <div class="info" style="padding-left: 30px;">
                         <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
                     </div>
                 </div>
@@ -91,8 +98,7 @@ session_start();
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                            aria-label="Search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-sidebar">
                                 <i class="fas fa-search fa-fw"></i>
@@ -103,8 +109,7 @@ session_start();
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
@@ -148,12 +153,12 @@ session_start();
             </div>
         </aside>
 
-        <section class="cont" style="padding-top: 100px;">
+        <section class="cont" style="width:fit-content">
             <div class="content align-self-md-center">
-                <div class="row p-xl-5" style="margin-left: 420px;">
+                <div class="row p-xl-5" style="margin-left: 330px;">
                     <div style="padding-left: 150px;">
 
-                        <div class="card card-danger">
+                        <div class="card card-danger" style="width:800px">
                             <div class="card-header" style="background:white; color:black;">
                                 <h3 class="card-title">Add chatbot Queries</h3>
                             </div>

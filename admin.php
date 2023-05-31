@@ -1,15 +1,15 @@
 <?php
- session_start();
-    include_once 'driver.php';
-            // $queries = $_POST['queries'];
-            // $replies = $_POST['replies'];
+session_start();
+include_once 'driver.php';
+// $queries = $_POST['queries'];
+// $replies = $_POST['replies'];
 
-            $sql = "SELECT * FROM admin";
-            $query = mysqli_query($conn, $sql);
-            $results = mysqli_fetch_all($query);
-            // if($result == true){
-                // header('location:dash.php');
-            // }
+$sql = "SELECT * FROM admin";
+$query = mysqli_query($conn, $sql);
+$results = mysqli_fetch_all($query);
+// if($result == true){
+// header('location:dash.php');
+// }
 
 ?>
 <!DOCTYPE html>
@@ -21,8 +21,7 @@
     <title>Hospital Chatbot</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- overlayScrollbars -->
@@ -31,7 +30,7 @@
     <link rel="stylesheet" href="dist/css/adminlte.css">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-footer-fixed" style="overflow-x: hidden;">
     <div class="wrapper">
 
         <!-- Navbar -->
@@ -56,20 +55,26 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="admin.php" class="nav-link">Admins</a>
                 </li>
-
+                <li style="padding-left: 800px;">
+                    <div class="dropdown">
+                        <button id="my-dropdown" class="btn btn-primary dropdown-toggle bg-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?></button>
+                        <div class="dropdown-menu" aria-labelledby="my-dropdown">
+                            <a class="dropdown-item" href="logout.php">Logout</a>
+                        </div>
+                    </div>
+                </li>
 
             </ul>
 
-            <div class="user-panel d-flex" style="padding-left: 500px;">
+            <div class="user-panel d-flex">
                 <div class="image">
                     <img src="dist/img/emma.jpg" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
                 </div>
             </div>
             <!-- Right navbar links -->
         </nav>
+
+        
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -80,17 +85,19 @@
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="dist/img/emma.jpg" class="img-circle elevation-2" alt="User Image">
+
                     </div>
-                    <div class="info">
+                    <div class="info" style="padding-left:30px;">
                         <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
                     </div>
                 </div>
 
+
+
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                            aria-label="Search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-sidebar">
                                 <i class="fas fa-search fa-fw"></i>
@@ -101,8 +108,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
@@ -115,7 +121,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="dash.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Queries</p>
                                     </a>
@@ -151,7 +157,7 @@
             <div class="content align-self-md-center">
                 <div class="row p-xl-5" style="margin-left: 420px;">
                     <div class="col-md-6" style="padding-bottom: 30px;">
-                        <div class="card card-danger" style="position: flex;">
+                        <div class="card card-danger" style="position: flex; width:1000px">
                             <div class="card-header" style="background:white; color:black;">
                                 <h3 class="card-title">List of Admins</h3>
                             </div>
@@ -169,26 +175,24 @@
                                         </tr>
 
                                     <tbody>
-                                        
-                                        <?php 
-                                        for ($i=0; $i < sizeof($results); $i++) { ?>
-                                        <tr>
-                                            <td><?php echo $results[$i][0] ?></td>
-                                            <td style="padding-left: 30px;"><?php echo $results[$i][1] ?></td>
-                                            <td style="padding-left: 30px;"><?php echo $results[$i][2] ?></td>
-                                            <td style="padding-left: 40px;"><?php echo $results[$i][3] ?></td>
-                                            <td style="padding-left: 40px;"><?php echo $results[$i][4] ?></td>
-                                            <td style="padding-left: 40px;">
-                                                <a href="editadmin.php?id=<?php echo $results[$i][0]; ?>"
-                                                    class="fas fa-edit"></a>
-                                            </td>
-                                            <td style="padding-left: 40px;">
-                                                <a href="deladmin.php?id=<?php echo $results[$i][0]; ?>"
-                                                    class="btn btn-outline-danger">
-                                                    del
-                                                </a>
-                                            </td>
-                                        </tr>
+
+                                        <?php
+                                        for ($i = 0; $i < sizeof($results); $i++) { ?>
+                                            <tr>
+                                                <td><?php echo $results[$i][0] ?></td>
+                                                <td style="padding-left: 30px;"><?php echo $results[$i][1] ?></td>
+                                                <td style="padding-left: 30px;"><?php echo $results[$i][2] ?></td>
+                                                <td style="padding-left: 40px;"><?php echo $results[$i][3] ?></td>
+                                                <td style="padding-left: 40px;"><?php echo $results[$i][4] ?></td>
+                                                <td style="padding-left: 40px;">
+                                                    <a href="editadmin.php?id=<?php echo $results[$i][0]; ?>" class="fas fa-edit"></a>
+                                                </td>
+                                                <td style="padding-left: 40px;">
+                                                    <a href="deladmin.php?id=<?php echo $results[$i][0]; ?>" class="btn btn-outline-danger">
+                                                        del
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         <?php } ?>
                                     </tbody>
 
