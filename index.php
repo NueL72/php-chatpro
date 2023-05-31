@@ -12,7 +12,7 @@ if (!empty($_POST['pokea'])) {
     if ($emma['role'] == 0) {
         $emma['name'] == $pokeaName;
 
-        header('Location:user.php');
+        header('Location:users/user.php');
     } else if($emma['role'] == 1) {
         $_SESSION['username'] = $emma['name'];
         header('Location:dash.php');
