@@ -169,7 +169,7 @@
                                         </tr>
 
                                     <tbody>
-                                        <!-- <?php echo json_encode($results[0]); ?> -->
+                                        
                                         <?php 
                                         for ($i=0; $i < sizeof($results); $i++) { ?>
                                         <tr>
