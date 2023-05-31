@@ -74,7 +74,7 @@ $results = mysqli_fetch_all($query);
             <!-- Right navbar links -->
         </nav>
 
-        
+
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -169,9 +169,9 @@ $results = mysqli_fetch_all($query);
                                             <th style="padding-left: 30px;">name</th>
                                             <th style="padding-left: 30px;">Email</th>
                                             <th style="padding-left: 40px;">password</th>
-                                            <th style="padding-left: 40px;">role</th>
-                                            <th style="padding-left: 40px;">edit</th>
-                                            <th style="padding-left: 40px;">delete</th>
+                                            <th style="padding-left: 200px;">role</th>
+                                            <th style="padding-left: 100px;">edit</th>
+                                            <th style="padding-left: 100px;">delete</th>
                                         </tr>
 
                                     <tbody>
@@ -183,11 +183,11 @@ $results = mysqli_fetch_all($query);
                                                 <td style="padding-left: 30px;"><?php echo $results[$i][1] ?></td>
                                                 <td style="padding-left: 30px;"><?php echo $results[$i][2] ?></td>
                                                 <td style="padding-left: 40px;"><?php echo $results[$i][3] ?></td>
-                                                <td style="padding-left: 40px;"><?php echo $results[$i][4] ?></td>
-                                                <td style="padding-left: 40px;">
+                                                <td style="padding-left: 200px;"><?php echo $results[$i][4] ?></td>
+                                                <td style="padding-left: 100px;">
                                                     <a href="editadmin.php?id=<?php echo $results[$i][0]; ?>" class="fas fa-edit"></a>
                                                 </td>
-                                                <td style="padding-left: 40px;">
+                                                <td style="padding-left: 100px;">
                                                     <a href="deladmin.php?id=<?php echo $results[$i][0]; ?>" class="btn btn-outline-danger">
                                                         del
                                                     </a>
@@ -198,9 +198,10 @@ $results = mysqli_fetch_all($query);
 
                                     </thead>
                                 </table>
-                                <div class="input-group float-left" style="padding-top: 10px; padding-left:500px;">
+                                <center style="padding-top:20px">
                                     <a href="newadmin.php" class="btn btn-outline-success">+Add</a>
-                                </div>
+                                    <a href="dash.php" class="btn btn-outline-danger">close</a>
+                                </center>
                                 <!-- /.form group -->
 
                                 </form>

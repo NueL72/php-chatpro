@@ -197,7 +197,7 @@ $results = mysqli_fetch_all($query);
 
                                     </thead>
                                 </table>
-                                <div class="input-group float-left" style="padding-top: 10px; padding-left:500px;">
+                                <div class="input-group float-left" style="padding-top: 10px; padding-left:800px;">
                                     <a href="new.php" class="btn btn-outline-success">+Add</a>
                                 </div>
                                 <!-- /.form group -->

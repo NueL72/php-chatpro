@@ -131,7 +131,7 @@ if (isset($_POST['register'])) {
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="new.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>New Queries</p>
                                     </a>
@@ -157,7 +157,7 @@ if (isset($_POST['register'])) {
             </div>
         </aside>
 
-        <section class="cont" style="padding-top: 100px;">
+        <section class="cont" style="padding-top: 50px;">
             <div class="content align-self-md-center">
                 <div class="row p-xl-5" style="margin-left: 330px;">
                     <div style="padding-left: 150px;">
@@ -210,12 +210,11 @@ if (isset($_POST['register'])) {
                                             <input type="hidden" name="role" value="0">
                                         </div>
                                         <!-- /.input group -->
-                                        <div class="input-group float-left" style="padding-top: 10px;">
-                                            <input type="submit" name="register" class="btn btn-outline-success" value="SEND">
-                                            <div style="padding-left: 200px;">
-                                                <a href="users.php" class="btn btn-outline-primary">CLOSE</a>
-                                            </div>
-                                        </div>
+                                       <center style="padding-top: 20px;">
+                                           <input type="submit" name="register" class="btn btn-outline-success" value="SEND">
+                                           <a href="users.php" class="btn btn-outline-danger">CLOSE</a>
+                                       </center>
+                                           
                                 </form>
                             </div>
                             <!-- /.card-body -->

@@ -159,11 +159,11 @@ if (!empty($_GET['id'])) {
             </div>
         </aside>
 
-        <section class="cont" style="padding-top: 100px;">
+        <section class="cont" style="padding-top: 50px;">
             <div class="content align-self-md-center">
                 <div class="row p-xl-5" style="margin-left: 420px;">
                     <div style="padding-left: 150px;">
-                        <div class="card card-danger">
+                        <div class="card card-danger" style="width:800px">
                             <div class="card-header" style="background:white; color:black;">
 
                                 <h3 class="card-title">Edit chatbot Queries</h3>

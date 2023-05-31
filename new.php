@@ -77,7 +77,7 @@ if (isset($_POST['Add'])) {
             <!-- Right navbar links -->
         </nav>
 
-        
+
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -206,14 +206,10 @@ if (isset($_POST['Add'])) {
                                         <!-- /.input group -->
                                     </div>
 
-                                    <div class="input-group float-left" style="padding-top: 10px; padding-left:20px;">
+                                    <center style="padding-top:20px">
                                         <input type="submit" name="Add" class="btn btn-outline-success" value="Add">
-                                        <div style="padding-left: 200px;">
-                                            <a href="dash.php" class="btn btn-outline-danger">Close</a>
-                                        </div>
-                                    </div>
-                                    <!-- /.form group -->
-
+                                        <a href="dash.php" class="btn btn-outline-danger">Close</a>
+                                    </center>
                                 </form>
                             </div>
                             <!-- /.card-body -->

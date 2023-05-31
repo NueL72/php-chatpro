@@ -1,15 +1,15 @@
 <?php
- session_start();
-    include_once 'driver.php';
-            // $queries = $_POST['queries'];
-            // $replies = $_POST['replies'];
+session_start();
+include_once 'driver.php';
+// $queries = $_POST['queries'];
+// $replies = $_POST['replies'];
 
-            $sql = "SELECT * FROM users";
-            $query = mysqli_query($conn, $sql);
-            $results = mysqli_fetch_all($query);
-            // if($result == true){
-                // header('location:dash.php');
-            // }
+$sql = "SELECT * FROM users";
+$query = mysqli_query($conn, $sql);
+$results = mysqli_fetch_all($query);
+// if($result == true){
+// header('location:dash.php');
+// }
 
 ?>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="dash.php" class="nav-link">Home</a>
                 </li>
-            
+
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="new.php" class="nav-link">AddQuery</a>
                 </li>
@@ -52,7 +52,7 @@
                     <a href="users.php" class="nav-link">Clients</a>
                 </li>
 
-                
+
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="admin.php" class="nav-link">Admins</a>
                 </li>
@@ -75,7 +75,7 @@
             <!-- Right navbar links -->
         </nav>
 
-        
+
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -160,46 +160,48 @@
                                 <h3 class="card-title">List of Clients</h3>
                             </div>
                             <div class="card-body">
-                              <table>
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th style="padding-left: 30px;">name</th>
-                                        <th style="padding-left: 30px;">Email</th>
-                                        <th style="padding-left: 40px;">password</th>
-                                        <th style="padding-left: 40px;">role</th>
-                                        <th style="padding-left: 40px;">edit</th>
-                                        <th style="padding-left: 40px;">delete</th>
-                                    </tr>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th style="padding-left: 30px;">name</th>
+                                            <th style="padding-left: 30px;">Email</th>
+                                            <th style="padding-left: 40px;">password</th>
+                                            <th style="padding-left: 200px;">role</th>
+                                            <th style="padding-left: 100px;">edit</th>
+                                            <th style="padding-left: 100px;">delete</th>
+                                        </tr>
 
                                     <tbody>
-                                        <!-- <?php echo json_encode($results[0]); ?> -->
-                                        <?php 
-                                        for ($i=0; $i < sizeof($results); $i++) { ?>
-                                        <tr>
-                                            <td><?php echo $results[$i][0] ?></td>
-                                            <td style="padding-left: 30px;"><?php echo $results[$i][1] ?></td>
-                                            <td style="padding-left: 30px;"><?php echo $results[$i][2] ?></td>
-                                            <td style="padding-left: 40px;"><?php echo $results[$i][3] ?></td>
-                                            <td style="padding-left: 40px;"><?php echo $results[$i][4] ?></td>
-                                            <td style="padding-left: 40px;">
-                                                <a href="edituser.php?id=<?php echo $results[$i][0]; ?>" class="fas fa-edit"></a>
-                                            </td>
-                                            <td style="padding-left: 40px;">
-                                            <a href="delusers.php?id=<?php echo $results[$i][0]; ?>" class="btn btn-outline-danger">
-                                                    del
-                                                </a>
-                                            </td>
-                                        </tr>
+
+                                        <?php
+                                        for ($i = 0; $i < sizeof($results); $i++) { ?>
+                                            <tr>
+                                                <td><?php echo $results[$i][0] ?></td>
+                                                <td style="padding-left: 30px;"><?php echo $results[$i][1] ?></td>
+                                                <td style="padding-left: 30px;"><?php echo $results[$i][2] ?></td>
+                                                <td style="padding-left: 40px;"><?php echo $results[$i][3] ?></td>
+                                                <td style="padding-left: 200px;"><?php echo $results[$i][4] ?></td>
+                                                <td style="padding-left: 100px;">
+                                                    <a href="edituser.php?id=<?php echo $results[$i][0]; ?>" class="fas fa-edit"></a>
+                                                </td>
+                                                <td style="padding-left: 100px;">
+                                                    <a href="delusers.php?id=<?php echo $results[$i][0]; ?>" class="btn btn-outline-danger">
+                                                        del
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         <?php } ?>
                                     </tbody>
 
-                                </thead>
-                              </table>
-                                    <div class="input-group float-left" style="padding-top: 10px; padding-left:500px;">
-                                        <a href="newusers.php" class="btn btn-outline-success">+Add</a>
-                                    </div>
-                                    <!-- /.form group -->
+                                    </thead>
+                                </table>
+                                <center style="padding-top:20px">
+                                    <a href="newusers.php" class="btn btn-outline-success">+Add</a>
+                                    <a href="dash.php" class="btn btn-outline-danger">close</a>
+                                </center>
+
+                                <!-- /.form group -->
 
                                 </form>
                             </div>

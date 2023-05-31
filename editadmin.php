@@ -167,7 +167,7 @@ if (!empty($_GET['id'])) {
                 <div class="content align-self-md-center">
                     <div class="row p-xl-5" style="margin-left: 420px;">
                         <div style="padding-left: 150px;">
-                            <div class="card card-danger">
+                            <div class="card card-danger" style="width:800px">
                                 <div class="card-header" style="background:white; color:black;">
 
                                     <h3 class="card-title">Edit Admins Details</h3>
@@ -230,12 +230,16 @@ if (!empty($_GET['id'])) {
                                             </div>
                                             <!-- /.input group -->
 
-                                            <div class="input-group float-left" style="padding-top: 10px; padding-left:20px;">
-                                                <button type="submit" name="Add" class="btn btn-outline-success" value="Update">update</button>
-                                                <div style="padding-left: 200px;">
-                                                    <a href="admin.php" class="btn btn-outline-danger">Close</a>
-                                                </div>
-                                            </div>
+                                           
+                                           <center style="padding-top:20px">
+                                           
+                                                    <button type="submit" name="Add" class="btn btn-outline-success" value="Update">update</button>
+                                                
+                                                        <a href="admin.php" class="btn btn-outline-danger">Close</a>
+                                                    
+                                                
+                                               </center> 
+                                            
                                             <!-- /.form group -->
 
                                     </form>
