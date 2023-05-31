@@ -208,15 +208,13 @@ $results = mysqli_fetch_all($query);
                         </div>
                         <!-- /.card -->
 
-
-
                     </div>
 
                 </div>
 
             </div>
         </section>
-        <footer class="main-footer">
+        <footer class="main-footer"> 
             <strong>Copyright &copy; 2014-2025 <a href="#">Hospital Chatbot</a>.</strong>
             All rights reserved.
             <!-- <div class="float-right d-none d-sm-inline-block">

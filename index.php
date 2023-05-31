@@ -13,11 +13,10 @@ if (!empty($_POST['pokea'])) {
         $emma['name'] == $pokeaName;
 
         header('Location:users/user.php');
-    } else if($emma['role'] == 1) {
+    } else if ($emma['role'] == 1) {
         $_SESSION['username'] = $emma['name'];
         header('Location:dash.php');
-    }
-    else{
+    } else {
         header('location:reg.php');
     }
 }
@@ -31,8 +30,7 @@ if (!empty($_POST['pokea'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Chatbot</title>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- daterange picker -->
@@ -56,14 +54,17 @@ if (!empty($_POST['pokea'])) {
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 
-<body>
-    <div class="content align-self-md-center" style="padding-top: 100px;">
-        <div class="row p-xl-5" style="margin-left: 420px;">
+<body style="display:flex;overflow-x: none;">
+    <div class="content align-self-md-center" style="padding-top: 50px;">
+        <center style="margin-left: 500px;">
+            <img src="users/images/index.png" alt="">
+        </center>
+        <div class="row p-xl-5" style="margin-left: 500px;">
             <div class="col-md-6">
 
-                <div class="card card-danger">
-                    <div class="card-header">
-                        <h3 class="card-title">Login Form</h3>
+                <div class="card card-danger" style="width:600px;">
+                    <div class="card-header" style="background-color:transparent;">
+                        <h3 class="card-title" style="color:black;font-weight:600;">LOGIN FORM</h3>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="">
@@ -78,9 +79,7 @@ if (!empty($_POST['pokea'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
-                                    <input type="text" name="mail" class="form-control"
-                                        data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="full name.."
-                                        required>
+                                    <input type="text" name="mail" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="full name.." required>
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -96,19 +95,17 @@ if (!empty($_POST['pokea'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                     </div>
-                                    <input type="password" name="code" class="form-control"
-                                        data-inputmask="'alias': 'ip'" data-mask placeholder="your password.." required>
+                                    <input type="password" name="code" class="form-control" data-inputmask="'alias': 'ip'" data-mask placeholder="your password.." required>
                                 </div>
                                 <!-- /.input group -->
-                                <div class="input-group float-left" style="padding-top: 10px;">
+                                <center style="padding-top:20px;">
                                     <input type="submit" name="pokea" class="btn btn-outline-success" value="LOGIN">
-                                    <div style="padding-left: 200px;">
-                                        <a href="reg.php" class="btn btn-outline-primary">REGISTER</a>
-                                    </div>
+                                    <a href="reg.php" class="btn btn-outline-primary">REGISTER</a>
 
+                                </center>
 
-                                </div>
-                                <!-- /.form group -->
+                            </div>
+                            <!-- /.form group -->
 
                         </form>
                     </div>

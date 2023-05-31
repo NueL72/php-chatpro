@@ -3,20 +3,20 @@ include_once 'driver.php';
 //if(isset($_POST()))
 if (isset($_POST['register'])) {
 
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  
-  // hii inatumika kustore data kwenye database ako
-  $SQL = "INSERT INTO users VALUES ('', '$name', '$email', '$password', '')";
-  $query = mysqli_query($conn, $SQL);
-  if ($query == true) {
-    session_start();
-    $_SESSION['name'] = $name;
-    $_SESSION['email'] = $email;
-    $_SESSION['msg'] = "Welcome " . $_SESSION['name'];
-    header('Location:bot.php');
-  }
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // hii inatumika kustore data kwenye database ako
+    $SQL = "INSERT INTO users VALUES ('', '$name', '$email', '$password', '')";
+    $query = mysqli_query($conn, $SQL);
+    if ($query == true) {
+        session_start();
+        $_SESSION['name'] = $name;
+        $_SESSION['email'] = $email;
+        $_SESSION['msg'] = "Welcome " . $_SESSION['name'];
+        header('Location:bot.php');
+    }
 }
 ?>
 
@@ -29,8 +29,7 @@ if (isset($_POST['register'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hospital Chatbot</title>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- daterange picker -->
@@ -54,14 +53,18 @@ if (isset($_POST['register'])) {
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 
-<body>
-    <div class="content align-self-md-center" style="padding-top: 100px;">
-        <div class="row p-xl-5" style="margin-left: 420px;">
+<body style="display:flex;overflow-x: none;">
+    <div class="content align-self-md-center" style="padding-top: 50px;">
+        <center style="margin-left: 500px;">
+            <img src="users/images/index.png" alt="">
+        </center>
+
+        <div class="row p-xl-5" style="margin-left: 500px;">
             <div class="col-md-6">
 
-                <div class="card card-danger">
-                    <div class="card-header">
-                        <h3 class="card-title">Registration Form</h3>
+                <div class="card card-danger" style="width:600px">
+                    <div class="card-header" style="background-color:transparent;">
+                        <h3 class="card-title" style="color:black;font-weight:600;">REGISTRATION FORM</h3>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="">
@@ -76,8 +79,7 @@ if (isset($_POST['register'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
-                                    <input type="text" name="name" class="form-control"
-                                        data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="full name.." required>
+                                    <input type="text" name="name" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="full name.." required>
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -91,9 +93,7 @@ if (isset($_POST['register'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-book-open"></i></span>
                                     </div>
-                                    <input type="email" class="form-control" name="email"
-                                        data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']"
-                                        data-mask placeholder="your email.." required>
+                                    <input type="email" class="form-control" name="email" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask placeholder="your email.." required>
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -107,17 +107,15 @@ if (isset($_POST['register'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                     </div>
-                                    <input type="password" name="password" class="form-control"
-                                        data-inputmask="'alias': 'ip'" data-mask placeholder="your password.." required>
+                                    <input type="password" name="password" class="form-control" data-inputmask="'alias': 'ip'" data-mask placeholder="your password.." required>
                                 </div>
 
                                 <!-- /.input group -->
-                                <div class="input-group float-left" style="padding-top: 10px;">
+                                <center style="padding-top: 20px;">
                                     <input type="submit" name="register" class="btn btn-outline-success" value="REGISTER">
-                                    <div style="padding-left: 200px;">
                                     <a href="index.php" class="btn btn-outline-primary">LOGIN</a>
-                                    </div>
-                                </div>
+                                </center>
+
                                 <!-- /.form group -->
 
                         </form>
