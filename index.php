@@ -8,16 +8,17 @@ if (!empty($_POST['pokea'])) {
     $sql = "SELECT * FROM users WHERE `name` = '" . $pokeaName . "' AND password = '" . $pokeaPass . "'";
     $query = mysqli_query($conn, $sql);
     //echo $sql;
-    $emma = mysqli_fetch_array($query);
-    if ($emma['role'] == 0) {
-        $emma['name'] == $pokeaName;
 
-        header('Location:users/user.php');
-    } else if ($emma['role'] == 1) {
-        $_SESSION['username'] = $emma['name'];
-        header('Location:dash.php');
-    } else {
-        header('location:reg.php');
+    if(mysqli_num_rows($query)==1){
+        $result = mysqli_fetch_array($query);
+
+        if($result['role']==0){
+            header('location:users/user.php');
+        }else{
+            header('location:dash.php');
+        }
+    }else{
+        echo '<script>alert("incorrect username or password")</script>';
     }
 }
 ?>
