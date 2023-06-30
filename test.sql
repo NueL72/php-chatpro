@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `email`, `password`, `role`) VALUES
-(1, 'emmanuel', 'paulsiaga72@gmail.com', 'qwerty1234', 1);
+(1, 'admin', 'admin@gmail.com', 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -100,9 +100,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`) VALUES
-(1, 'emmanuel', 'paulsiaga72@gmail.com', 'qwerty1234', 1),
-(2, 'alex', 'alex@gmail.com', '0000', 0),
-(4, 'tairo', 'tairo@gmail.com', '1234', 0);
+(1, 'admin', 'admin@gmail.com', 'admin', 1),
+(2, 'user', 'user@gmail.com', 'user', 0);
 
 -- --------------------------------------------------------
 

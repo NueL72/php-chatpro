@@ -15,6 +15,7 @@ if (!empty($_POST['pokea'])) {
         if($result['role']==0){
             header('location:users/user.php');
         }else{
+            $_SESSION['username'] = $pokeaName;
             header('location:dash.php');
         }
     }else{
@@ -57,68 +58,68 @@ if (!empty($_POST['pokea'])) {
 
 <body style="display:flex;overflow-x: none;">
     <div class="content align-self-md-center" style="padding-top: 50px;">
-        <center style="margin-left: 500px;">
-            <img src="users/images/index.png" alt="">
-        </center>
-        <div class="row p-xl-5" style="margin-left: 500px;">
-            <div class="col-md-6">
-
-                <div class="card card-danger" style="width:600px;">
-                    <div class="card-header" style="background-color:transparent;">
-                        <h3 class="card-title" style="color:black;font-weight:600;">LOGIN FORM</h3>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST" action="">
-
-                            <!-- /.form group -->
-
-                            <!-- phone mask -->
-                            <div class="form-group">
-                                <label>name:</label>
-
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+        <center>
+            <img src="users/images/index.png" alt="" style="margin-left:300px">
+            <div class="row p-xl-5" style="margin-left: 300px; display:flex;text-align:left">
+                <div class="col-md-6">
+    
+                    <div class="card card-danger" style="width:600px;">
+                        <div class="card-header" style="background-color:transparent;">
+                            <h3 class="card-title" style="color:black;font-weight:600;">LOGIN FORM</h3>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST" action="">
+    
+                                <!-- /.form group -->
+    
+                                <!-- phone mask -->
+                                <div class="form-group">
+                                    <label>name:</label>
+    
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input type="text" name="mail" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="full name.." required>
                                     </div>
-                                    <input type="text" name="mail" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="full name.." required>
+                                    <!-- /.input group -->
                                 </div>
-                                <!-- /.input group -->
-                            </div>
-                            <!-- /.form group -->
-
-                            <!-- phone mask -->
-
-                            <!-- IP mask -->
-                            <div class="form-group">
-                                <label>password:</label>
-
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                <!-- /.form group -->
+    
+                                <!-- phone mask -->
+    
+                                <!-- IP mask -->
+                                <div class="form-group">
+                                    <label>password:</label>
+    
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                        </div>
+                                        <input type="password" name="code" class="form-control" data-inputmask="'alias': 'ip'" data-mask placeholder="your password.." required>
                                     </div>
-                                    <input type="password" name="code" class="form-control" data-inputmask="'alias': 'ip'" data-mask placeholder="your password.." required>
+                                    <!-- /.input group -->
+                                    <center style="padding-top:20px;">
+                                        <input type="submit" name="pokea" class="btn btn-outline-success" value="LOGIN">
+                                        <a href="reg.php" class="btn btn-outline-primary">REGISTER</a>
+    
+                                    </center>
+    
                                 </div>
-                                <!-- /.input group -->
-                                <center style="padding-top:20px;">
-                                    <input type="submit" name="pokea" class="btn btn-outline-success" value="LOGIN">
-                                    <a href="reg.php" class="btn btn-outline-primary">REGISTER</a>
-
-                                </center>
-
-                            </div>
-                            <!-- /.form group -->
-
-                        </form>
+                                <!-- /.form group -->
+    
+                            </form>
+                        </div>
+                        <!-- /.card-body -->
                     </div>
-                    <!-- /.card-body -->
+                    <!-- /.card -->
+    
+    
+    
                 </div>
-                <!-- /.card -->
-
-
-
+    
             </div>
-
-        </div>
+        </center>
 
     </div>
     <script src="plugins/jquery/jquery.min.js"></script>

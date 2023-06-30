@@ -58,7 +58,7 @@ if (isset($_POST['Add'])) {
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="admin.php" class="nav-link">Admins</a>
                 </li>
-                <li style="padding-left: 800px;">
+                <li style="padding-left: 500px;">
                     <div class="dropdown">
                         <button id="my-dropdown" class="btn btn-primary dropdown-toggle bg-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?></button>
                         <div class="dropdown-menu" aria-labelledby="my-dropdown">
@@ -155,7 +155,7 @@ if (isset($_POST['Add'])) {
 
         <section class="cont" style="width:fit-content">
             <div class="content align-self-md-center">
-                <div class="row p-xl-5" style="margin-left: 330px;">
+                <div class="row p-xl-5" style="margin-left: 250px;">
                     <div style="padding-left: 150px;">
 
                         <div class="card card-danger" style="width:800px">

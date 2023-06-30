@@ -55,7 +55,7 @@ $results = mysqli_fetch_all($query);
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="admin.php" class="nav-link">Admins</a>
                 </li>
-                <li style="padding-left: 800px;">
+                <li style="padding-left: 500px;">
                     <div class="dropdown">
                         <button id="my-dropdown" class="btn btn-primary dropdown-toggle bg-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?></button>
                         <div class="dropdown-menu" aria-labelledby="my-dropdown">
@@ -155,7 +155,7 @@ $results = mysqli_fetch_all($query);
 
         <section class="cont" style="padding-top: 50px; width:2000px;">
             <div class="content align-self-md-center">
-                <div class="row p-xl-5" style="margin-left: 420px;">
+                <div class="row p-xl-5" style="margin-left: 250px;">
                     <div class="col-md-6" style="padding-bottom: 30px;">
                         <div class="card card-danger" style="position: flex; width:1000px">
                             <div class="card-header" style="background:white; color:black;">
